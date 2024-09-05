@@ -1,0 +1,148 @@
+<!DDOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GALLERY PAGE</title>
+    <link rel="stylesheet" href="styleG.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Navigation -->
+    <header>
+        <br>
+        <div class="div-nav" id="divNav">
+            <nav>
+                <div class="wrapper">
+                    <!-- Logo -->
+                    <div class="logo"><span>buy</span>Anything.com</div>
+                    <!-- Menu Show & Close Radios -->
+                    <input type="radio" name="slide" id="show-mbtn">
+                    <input type="radio" name="slide" id="close-mbtn">
+                    <!-- Sub Menu Items Show & Hide Checkboxes -->
+                    <input type="checkbox" name="service" id="service">
+                    <input type="checkbox" name="categories" id="categories">
+                    <!-- Menu Items -->
+                    <ul class="nav-links">
+                        <li><a href="Home.html">Home</a></li>
+                        <li><a href="au.html">About</a></li>
+                        <li><a href="gallerypg.html">Gallery</a></li>
+                        <li><a href="#"><label for="categories">Categories</label></a>
+                            <!-- Mega Menu -->
+                            <div class="mega-box">
+                                <div class="content">
+                                    <div class="row">
+                                        <img src="logopic1.jpeg" alt="logo image">
+                                    </div>
+                                    <div class="row">
+                                        <header>Clothes</header>
+                                        <ul class="mega-links">
+                                            <li><a href="shirt.html">Shirts</a></li>
+                                            <li><a href="#">Denims</a></li>
+                                            <li><a href="#">Frocks</a></li>
+                                            <li><a href="#">Blouses</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="row">
+                                        <header>Shoes</header>
+                                        <ul class="mega-links">
+                                            <li><a href="shoe.html">Casual</a></li>
+                                            <li><a href="#">Sports</a></li>
+                                            <li><a href="#">Office</a></li>
+                                            <li><a href="#">Dancing</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="row">
+                                        <header>Porcelain</header>
+                                        <ul class="mega-links">
+                                            <li><a href="mugs.html">Mugs</a></li>
+                                            <li><a href="#">plates</a></li>
+                                            <li><a href="#">Pots</a></li>
+                                            <li><a href="#">curry dishes</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="row">
+                                        <header>Stationaries</header>
+                                        <ul class="mega-links">
+                                            <li><a href="books.html">Books</a></li>
+                                            <li><a href="#">Corporate Stationary</a></li>
+                                            <li><a href="#">Pens</a></li>
+                                            <li><a href="#">Cases</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="row">
+                                        <header>Food</header>
+                                        <ul class="mega-links">
+                                            <li><a href="Vegetables.html">Vegetables</a></li>
+                                            <li><a href="#">Fruits</a></li>
+                                            <li><a href="#">Snacks</a></li>
+                                            <li><a href="#">Grains</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="listingPg.html"> Listing Page</a></li>
+                    </ul>
+                    <!-- Menu Show & Close Buttons -->
+                    <label for="show-mbtn" class="sbtn mbtn"><i class="fas fa-bars"></i></label>
+                    <label for="close-mbtn" class="cbtn mbtn"><i class="fas fa-times"></i></label>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+</head>
+
+<body>
+
+    <div class="full-img" id="fullImgBox">
+        <img src="cover1.jpg" width="300" height="168" id="fullImg" alt="clothes">
+        <span onclick="closeFullImg()">X</span>
+    </div>
+    <div class="img-gallery">
+        <div style="width:image width px; font-size:80%; text-align:center;">
+
+
+            <div class="content-img">
+                <img src="cover1.jpg" width="300" height="168" id="image1" onclick="openFullImg(this.src)" alt="clothes" style="padding-bottom:0.5em;" />
+                <div>Clothes - You can buy fine shirts, denims, frocks, blouses.</div>
+            </div>
+
+        </div>
+
+        <div class="content-img">
+            <img src="cover2.jpg" width="300" height="168" id="image2" onclick="openFullImg(this.src)" alt="shoes">
+            <div>Shoes - You can buy casual, sports, office, dancing shoes.</div>
+        </div>
+
+        <div class="content-img">
+            <img src="plate4.jpg" width="300" height="168" id="image3" onclick="openFullImg(this.src)" alt="porcilane">
+            <div>Porcilain - You can buy fine mugs, plates, pots, curry dishes.</div>
+        </div>
+
+
+        <div class="content-img">
+            <img src="cover 4.jpg" width="300" height="168" id="image4" onclick="openFullImg(this.src)" alt="stationaries">
+            <div>Stationaries - You can buy books, pens, cases, corporate stationary.</div>
+        </div>
+
+        <div class="content-img">
+            <img src="cover3.jpg" width="300" height="168" id="image5" onclick="openFullImg(this.src)" alt="food">
+            <div>Food - You can buy vegetables, fruits, snacks, grains</div>
+        </div>
+    </div>
+    <script>
+        var fullImgBox = document.getElementById("fullImgBox");
+        var fullImg = document.getElementById("fullImg");
+
+        function openFullImg(pic) {
+            fullImgBox.style.display = "flex";
+            fullImg.src = pic;
+        }
+
+        function closeFullImg() {
+            fullImgBox.style.display = "none";
+
+        }
+    </script>
+</body>
+</html

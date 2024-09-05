@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Editors Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styleEd.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <style>
+        .button {
+            background-color: white;
+            border: 2px solid #404969;
+            color: black;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: poiters;
+            border-radius: 8px;
+        }
+        
+        .button:hover {
+            background-color: #404969;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="wrapper">
+                <!-- Logo -->
+                <div class="logo"><span>buy</span>Anything.com</div>
+                <!-- Menu Show & Close Radios -->
+                <input type="radio" name="slide" id="show-mbtn">
+                <input type="radio" name="slide" id="close-mbtn">
+                <!-- Sub Menu Items Show & Hide Checkboxes -->
+                <input type="checkbox" name="service" id="service">
+                <input type="checkbox" name="categories" id="categories">
+                <!-- Menu Items -->
+                <ul class="nav-links">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="au.html">About</a></li>
+                    <li><a href="gallerypg.html">Gallery</a></li>
+                    <li><a href="#"><label for="categories">Categories</label></a>
+                        <!-- Mega Menu -->
+                        <div class="mega-box">
+                            <div class="content">
+                                <div class="row">
+                                    <img src="logo.jpeg" alt="logo image">
+                                </div>
+                                <div class="row">
+                                    <header>Clothes</header>
+                                    <ul class="mega-links">
+                                        <li><a href="shirt.html">Shirts</a></li>
+                                        <li><a href="#">Denims</a></li>
+                                        <li><a href="#">Frocks</a></li>
+                                        <li><a href="#">Blouses</a></li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <header>Shoes</header>
+                                    <ul class="mega-links">
+                                        <li><a href="shoe.html">Casual</a></li>
+                                        <li><a href="#">Sports</a></li>
+                                        <li><a href="#">Office</a></li>
+                                        <li><a href="#">Dancing</a></li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <header>Porcelain</header>
+                                    <ul class="mega-links">
+                                        <li><a href="mugs.html">Mugs</a></li>
+                                        <li>
+                                            <a href="#">Plates</a>
+                                        </li>
+                                        <li><a href="#">Curry Dishes</a></li>
+                                        <li><a href="#">Pots</a></li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <header>Stationaries</header>
+                                    <ul class="mega-links">
+                                        <li><a href="books.html">Books</a></li>
+                                        <li><a href="#">Corporate Stationary</a></li>
+                                        <li><a href="#">Pens</a></li>
+                                        <li><a href="#">Cases</a></li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <header>Food</header>
+                                    <ul class="mega-links">
+                                        <li><a href="Vegetables.html">Vegetables</a></li>
+                                        <li><a href="#">Fruits</a></li>
+                                        <li><a href="#">Snacks</a></li>
+                                        <li><a href="#">Grains</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+                <!-- Menu Show & Close Buttons -->
+                <label for="show-mbtn" class="sbtn mbtn"><i class="fas fa-bars"></i></label>
+                <label for="close-mbtn" class="cbtn mbtn"><i class="fas fa-times"></i></label>
+            </div>
+        </nav>
+    </header>
+    <div class="about-wrapper">
+        <div class="about-left">
+            <div class="about-left-content">
+                <div>
+                    <div class="shadow">
+                        <div class="about-img">
+                            <img src="nethari.jpg" alt="about image">
+                        </div>
+                    </div>
+
+                    <h2>Nethari<br>Jayasinghe</h2>
+                    <h3>Student 3</h3>
+                </div>
+
+                <ul class="icons">
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-linkedin"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="about-right">
+            <h1>hi<span>!</span></h1>
+            <h2>Here's who I am & what I do</h2>
+            <div class="about-para">
+                <p><b>Name:</b> Nethari Jayasinghe</p>
+                <p><b>IIT Student Number:</b> 20210931</p>
+                <p><b>RGU Student Number:</b> 2118527</p>
+                <p><b>What I do:</b></p>
+                <p><b>Made the:</b></p>
+                <p>Buy products pages- shirts,shoes,mugs,books,vegetables</p>
+                <p>About Us page</p>
+                <p>And this Editors page</p>
+                <h4><a href="Home.html"><button class="button">Back to Main</button></a>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

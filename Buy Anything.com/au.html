@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #fffdeb;
+        }
+        
+        .container {
+            position: relative;
+            width: 50%;
+        }
+        
+        .image {
+            display: block;
+            width: 50%;
+            height: auto;
+        }
+        
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #DC552C;
+            overflow: hidden;
+            width: 0;
+            height: 100%;
+            transition: .5s ease;
+        }
+        
+        .container:hover .overlay {
+            width: 100%;
+        }
+        
+        .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+        }
+        
+        .editorsPg {
+            margin-bottom: 15px;
+            padding: 4px 12px;
+            background-color: #F5FEFF;
+            border-left: 6px solid #BDE4F4;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="wrapper">
+                <!-- Logo -->
+                <div class="logo"><span>buy</span>Anything.com</div>
+                <!-- Menu Show & Close Radios -->
+                <input type="radio" name="slide" id="show-mbtn">
+                <input type="radio" name="slide" id="close-mbtn">
+                <!-- Sub Menu Items Show & Hide Checkboxes -->
+                <input type="checkbox" name="service" id="service">
+                <input type="checkbox" name="categories" id="categories">
+                <!-- Menu Items -->
+                <ul class="nav-links">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="au.html">About</a></li>
+                    <li><a href="gallerypg.html">Gallery</a></li>
+                    <li><a href="#"><label for="categories">Categories</label></a>
+                        <!-- Mega Menu -->
+                        <div class="mega-box">
+                            <div class="content">
+                                <div class="row">
+                                    <img src="logo.jpeg" alt="logo image">
+                                </div>
+                                <div class="row">
+                                    <header>Clothes</header>
+                                    <ul class="mega-links">
+                                        <li>
+                                            <a href="shirt.html">Shirts</a></li>
+                                        <li><a href=" # ">Denims</a></li>
+                                        <li><a href="# ">Frocks</a></li>
+                                        <li><a href="# ">Blouses</a></li>
+                                    </ul>
+                                </div>
+                                <div class="row ">
+                                    <header>Shoes</header>
+                                    <ul class="mega-links ">
+                                        <li><a href="shoe.html ">Casual</a></li>
+                                        <li><a href="# ">Sports</a></li>
+                                        <li><a href="# ">Office</a></li>
+                                        <li><a href="# ">Dancing</a></li>
+                                    </ul>
+                                </div>
+                                <div class="row ">
+                                    <header>Porcelain</header>
+                                    <ul class="mega-links ">
+                                        <li><a href="mugs.html ">Mugs</a></li>
+                                        <li>
+                                            <a href="# ">Plates</a>
+                                        </li>
+                                        <li><a href="# ">Curry Dishes</a></li>
+                                        <li><a href="# ">Pots</a></li>
+                                    </ul>
+                                </div>
+                                <div class="row ">
+                                    <header>Stationaries</header>
+                                    <ul class="mega-links ">
+                                        <li><a href="books.html ">Books</a></li>
+                                        <li><a href="# ">Corporate Stationary</a></li>
+                                        <li><a href="# ">Pens</a></li>
+                                        <li><a href="# ">Cases</a></li>
+                                    </ul>
+                                </div>
+                                <div class="row ">
+                                    <header>Food</header>
+                                    <ul class="mega-links ">
+                                        <li><a href="Vegetables.html ">Vegetables</a></li>
+                                        <li><a href="# ">Fruits</a></li>
+                                        <li><a href="# ">Snacks</a></li>
+                                        <li><a href="# ">Grains</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="listingPg.html">Listing Page</a>
+                    </li>
+
+                </ul>
+                <!-- Menu Show & Close Buttons -->
+                <label for="show-mbtn " class="sbtn mbtn "><i class="fas fa-bars "></i></label>
+                <label for="close-mbtn " class="cbtn mbtn "><i class="fas fa-times "></i></label>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 style="text-align:center">Our Team</h1>
+    <br>
+    <div class="row" align="center">
+        <div class="container">
+            <img src="duweeja.jpg" alt="duweeja" class="image" align="center">
+            <div class="overlay">
+                <div class="text">Duweeja De Lima, Student 1</div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <img src="tharusha.jpg" alt="tharusha" class="image" align="center">
+            <div class="overlay">
+                <div class="text">Tharusha Jayasekara, Student 2</div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <img src="nethari.jpg" alt="nethari" class="image" align="center">
+            <div class="overlay">
+                <div class="text">Nethari Jayasinghe, Student 3</div>
+            </div>
+            <br>
+        </div>
+        <div class="container">
+            <img src="induwara.jpg" alt="induwara" class="image" align="center">
+            <div class="overlay">
+                <div class="text">Induwara Jayasinghe, Student 4</div>
+            </div>
+            <br>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="editorsPg">
+        <p><strong>Who made this page?</strong>Click on "Editors Page".</p>
+        <p style="font-size:20px;"><a href="nEditorspage.html" style="color:red;">Editors Page</a></p>
+    </div>
+    </div>
+</footer>
+
+</html>

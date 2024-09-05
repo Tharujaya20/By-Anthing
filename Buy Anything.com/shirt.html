@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Buy Products</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #fffdeb;
+        }
+        
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+        
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+        
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #DC552C;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+        
+        .card button:hover {
+            opacity: 0.7;
+        }
+        
+        .items {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        
+        .editorsPg {
+            margin-bottom: 15px;
+            padding: 4px 12px;
+            background-color: #F5FEFF;
+            border-left: 6px solid #BDE4F4;
+        }
+        
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1200px;
+            flex-direction: column;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .container .buttons {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin-bottom: 20px;
+        }
+        
+        .container .buttons .btn {
+            padding: 0 10px;
+            display: inline-flex;
+            background: #ddd;
+            color: #fff;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        .container .buttons .btn.active {
+            background: #444;
+        }
+        
+        .container .buttons .btn:nth-child(2) {
+            font-size: 1.5em;
+        }
+        
+        .container .buttons .btn:nth-child(3) {
+            font-size: 2em;
+        }
+        
+        .container .card {
+            font-size: 1em;
+            color: #444;
+        }
+        
+        <!--form css-->.personalInfo {
+            border-style: groove;
+            margin: 100%;
+        }
+        
+        .name-cont:hover {
+            margin: 15px 8px;
+            height: 100px;
+            background-color: #BDE4F4;
+        }
+        
+        #name {
+            display: block;
+            width: 100%;
+            height: 45px;
+            margin-left: 10px;
+            margin-top: 22px;
+            padding-left: 25px;
+        }
+        
+        .name1 {
+            font-size: 18px;
+            margin: 34px 10px;
+            float: left;
+        }
+        
+        .email-cont:hover {
+            margin: 25px 8px;
+            height: 100px;
+            background-color: #BDE4F4;
+        }
+        
+        #email {
+            display: block;
+            width: 100%;
+            height: 45px;
+            margin-left: 10px;
+            margin-top: 22px;
+            margin-bottom: 22px;
+            padding-left: 25px;
+        }
+        
+        .phone-cont:hover {
+            margin: 25px 8px;
+            background-color: #BDE4F4;
+            height: 100px;
+        }
+        
+        .phone .email. {
+            font-size: 18px;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+        
+        #phone {
+            display: block;
+            width: 100%;
+            height: 45px;
+            margin-left: 10px;
+            margin-top: 22px;
+            padding-left: 25px;
+        }
+        
+        .billing-cont:hover {
+            margin: 25px 8px;
+            background-color: #BDE4F4;
+            height: 100px;
+        }
+        
+        #address {
+            display: block;
+            width: 100%;
+            height: 45px;
+            margin-left: 10px;
+            margin-top: 22px;
+            padding-left: 25px;
+        }
+        
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: #BDE4F4;
+        }
+        
+        .both {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #DC552C;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let x = document.forms["informationForm"]["name"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            let y = document.forms["informationForm"]["address"].value;
+            if (y == "") {
+                alert("Address must be filled out");
+                return false;
+            }
+            let z = document.forms["informationForm"]["email"].value;
+            if (z == "") {
+                alert("Email must be filled out");
+                return false;
+            }
+            let w = document.forms["informationForm"]["phone"].value;
+            if (w == "") {
+                alert("Phone Number must be filled out");
+                return false;
+            }
+        }
+
+        function totalAmnt1() {
+            let points = prompt("Please enter your marks from quiz");
+            let quantity = prompt("Please enter quantity of items you need");
+            let discount = points * 10;
+            let total = 700;
+            total = (((100 - discount) * total) / 100) * quantity;
+            alert("Dear Customer you have ordered " + quantity + " Blue Mens Shirt, Total: Rs " + total);
+            confirm("Make sure you fill the form, Payment Method available: Cash on Delivery");
+        }
+
+        function totalAmnt2() {
+            let points = prompt("Please enter your marks from quiz");
+            let quantity = prompt("Please enter quantity of items you need");
+            let discount = points * 10;
+            let total = 700;
+            total = (((100 - discount) * total) / 100) * quantity;
+            alert("Dear Customer you have ordered " + quantity + " Blue Womens Shirt, Total: Rs " + total);
+            confirm("Make sure you fill the form, Payment Method available: Cash on Delivery");
+        }
+
+        function bothTotal() {
+            let points = prompt("Please enter your marks from quiz");
+            let discount = points * 10;
+            let q1 = prompt("Please enter quantity of Mens Blue Shirt you need");
+            let q2 = prompt("Please enter quantity of Womens Blue Shirt you need");
+            let total1 = 700 * q1;
+            let total2 = 700 * q2;
+            let Total = ((100 - discount) * (total1 + total2)) / 100;
+            alert("Dear Customer you have ordered " + q1 + " Blue Mens Shirt and " + q2 + " Womens Blue Shirt, Total: Rs " + Total);
+            confirm("Make sure you fill the form, Payment Method available: Cash on Delivery");
+        }
+    </script>
+</head>
+<!-- Navigation -->
+<header>
+    <nav>
+        <div class="wrapper">
+            <!-- Logo -->
+            <div class="logo"><span>buy</span>Anything.com</div>
+            <!-- Menu Show & Close Radios -->
+            <input type="radio" name="slide" id="show-mbtn">
+            <input type="radio" name="slide" id="close-mbtn">
+            <!-- Sub Menu Items Show & Hide Checkboxes -->
+            <input type="checkbox" name="service" id="service">
+            <input type="checkbox" name="categories" id="categories">
+            <!-- Menu Items -->
+            <ul class="nav-links">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="au.html">About</a></li>
+                <li><a href="gallerypg.html">Gallery</a></li>
+                <li><a href="#"><label for="categories">Categories</label></a>
+                    <!-- Mega Menu -->
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                <img src="logo.jpeg" alt="logo image">
+                            </div>
+                            <div class="row">
+                                <header>Clothes</header>
+                                <ul class="mega-links">
+                                    <li><a href="shirt.html">Shirts</a></li>
+                                    <li><a href="#">Denims</a></li>
+                                    <li><a href="#">Frocks</a></li>
+                                    <li><a href="#">Blouses</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Shoes</header>
+                                <ul class="mega-links">
+                                    <li><a href="shoe.html">Casual</a></li>
+                                    <li><a href="#">Sports</a></li>
+                                    <li><a href="#">Office</a></li>
+                                    <li><a href="#">Dancing</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Porcelain</header>
+                                <ul class="mega-links">
+                                    <li><a href="mugs.html">Mugs</a></li>
+                                    <li>
+                                        <a href="#">Plates</a>
+                                    </li>
+                                    <li><a href="#">Curry Dishes</a></li>
+                                    <li><a href="#">Pots</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Stationaries</header>
+                                <ul class="mega-links">
+                                    <li><a href="books.html">Books</a></li>
+                                    <li><a href="#">Corporate Stationary</a></li>
+                                    <li><a href="#">Pens</a></li>
+                                    <li><a href="#">Cases</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Food</header>
+                                <ul class="mega-links">
+                                    <li><a href="Vegetables.html">Vegetables</a></li>
+                                    <li><a href="#">Fruits</a></li>
+                                    <li><a href="#">Snacks</a></li>
+                                    <li><a href="#">Grains</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="listingPg.html">Listing</a>
+                </li>
+            </ul>
+            <!-- Menu Show & Close Buttons -->
+            <label for="show-mbtn" class="sbtn mbtn"><i class="fas fa-bars"></i></label>
+            <label for="close-mbtn" class="cbtn mbtn"><i class="fas fa-times"></i></label>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <br>
+    <br>
+    <div class="container" id="text">
+        <div class="items">
+            <div class="card">
+                <img src="shirt.png" alt="blue mens shirt" style="width:100%">
+                <h1>Blue Shirt- Mens</h1>
+                <p class="price">Rs 700</p>
+                <p>Comfortable, good quality</p>
+                <br>
+                <p><button onclick="totalAmnt1()">Place Order</button></p>
+            </div>
+            <br>
+            <br>
+            <div class="card">
+                <img src="shirt2.png" alt="blue womens shirt" style="width:100%">
+                <h1>Blue Shirt- Womens</h1>
+                <p class="price">Rs 700</p>
+                <p>Comfortable, good quality</p>
+                <br>
+                <p><button onclick="totalAmnt2()">Place Order</button></p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="buttons">
+            <span class="btn active" onclick="document.getElementById('text').style.fontSize='1em'">A</span>
+            <span class="btn" onclick="document.getElementById('text').style.fontSize='1.25em'">A</span>
+            <span class="btn" onclick="document.getElementById('text').style.fontSize='1.75em'">A</span>
+        </div>
+
+        <button class="both" onclick="bothTotal()">Buy Both</button>
+
+        <form name="informationForm" onsubmit="return validateForm();">
+            <legend><b>Enter your information~ORDER</b>
+                <legend>
+
+                    <div class="personalInfo">
+                        <div class="name-cont">
+                            <label><b>Name:</b></label><br>
+                            <input type="text" id="name" name="name" placeholder="Enter name" />
+                        </div>
+                        <div class="email-cont">
+                            <label><b>Email:</b></label><br>
+                            <input type="email" id="email" name="email" placeholder="ex:name@example.com" />
+                        </div>
+                        <div class="phone-cont">
+                            <label><b>Phone Number:</b></label><br>
+                            <input type="text" id="phone" name="phone" placeholder="000-000-000" maxlength="10" />
+                        </div>
+                        <div class="billing-cont">
+                            <label><b>Address:</b></label><br>
+                            <input type="text" id="address" name="address" placeholder="Enter billing address" />
+                        </div>
+                    </div>
+
+
+                    <p><button class="button" onclick="validateForm()">Submit</button></p>
+
+        </form>
+    </div>
+    <br>
+    <br>
+
+
+
+
+    <script>
+        let butoons = document.querySelector('.buttons');
+        let btn = buttons.querySelectorAll('.btn');
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].addEventListener('click', function() {
+                let current = document.getElementsByClassName('active');
+                current[0].className = current[0].className.replace("active", "");
+                this.className += "active";
+            })
+        }
+    </script>
+</body>
+<footer>
+
+
+
+    <div class="editorsPg">
+        <p><strong>Who made this page?</strong>Click on "Editors Page".</p>
+        <p style="font-size:20px;"><a href="neditor.html.html" style="color:red;">Editors Page</a></p>
+    </div>
+    </div>
+</footer>
+
+</html>

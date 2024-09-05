@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<Products> 
+
+	<product id = "P1">
+			<category>Clothes</category>
+			<Item>Shirts</Item>
+			<Brand>Under Armour</Brand>
+			<Price>$35.00</Price>
+			<Description>Men's UA Collegiate National Champions Locker Room T-Shirt.</Description>
+	</product>
+
+	
+	<product id = "P2">	
+			<category>Clothes</category>
+			<Item>Denims</Item>
+			<Brand>Diesel</Brand>
+			<Price>$118.00</Price>
+			<Description>DIESEL JEANS SLEENKER-X L.30.</Description>
+	</product>
+
+	
+	<product id = "P3">	
+			<category>Clothes</category>
+			<Item>Frocks</Item>
+			<Brand>Polo</Brand>
+			<Price>$25.00</Price>
+			<Description>Yfashion Women Dress Flower Printed Color Matching Crew-neck Short-sleeve Long Skirt color.</Description>
+	</product>	
+
+	
+	<product id = "P4">		
+			<category>Clothes</category>
+			<Item>Sarees</Item>
+			<Brand>Kandiyan</Brand>
+			<Price>$34.00</Price>
+			<Description>Woven Embellished Kanjivaram Poly Silk Saree (Black and Grey).</Description>
+	</product>		
+	
+
+	<product id = "P5">
+			<category>Shoes</category>
+			<Item>Casual</Item>
+			<Brand>Addidas</Brand>
+			<Price>$18.00</Price>
+			<Description>Adidas black casual shoe for men.</Description>
+	</product>
+	
+	
+    <product id = "P6">	
+			<category>Shoes</category>
+			<Item>Sports</Item>
+			<Brand>Nike</Brand>
+			<Price>$20.00</Price>
+			<Description>Nike shoes / Nike sport sneakers.</Description>
+	</product>
+
+	
+	<product id = "P7">		
+			<category>Shoes</category>
+			<Item>Office</Item>
+			<Brand>Prada</Brand>
+			<Price>$27.00</Price>
+			<Description>Men's Formal Footwear.</Description>
+	</product>
+
+	
+	<product id = "P8">	
+			<category>Shoes</category>
+			<Item>Dancing</Item>
+			<Brand>Heel</Brand>
+			<Price>$19.00</Price>
+			<Description>Women Ladies Rumba Waltz Prom Ballroom Latin Salsa Dancing Singles Leather Shoes.</Description>
+	</product>		
+	
+
+	
+	<product id = "P9">	
+			<category>Crafts</category>
+			<Item>Mugs</Item>
+			<Brand>No Brand</Brand>
+			<Price>$3.00</Price>
+			<Description>Anniversary mug Gift Mug Heart Mug wedding mug.</Description>
+	</product>	
+	
+	
+    <product id = "P10">	
+			<category>Crafts</category>
+			<Item>Watches</Item>
+			<Brand>Realme</Brand>
+			<Price>$26,00</Price>
+			<Description>Realme Watch 2 Pro smartwatch with large 1.75" display and dual GPS positioning system.</Description>
+	</product>
+
+	
+	<product id = "P11">	
+			<category>Crafts</category>
+			<Item>Bags</Item>
+			<Brand>Adidas</Brand>
+			<Price>$10.00</Price>
+			<Description>Stylish Double Shoulder Backpack/ Bag.</Description>
+	</product>	
+
+	
+	<product id = "P12">	
+			<category>Crafts</category>
+			<Item>Pots</Item>
+			<Brand>No Brand</Brand>
+			<Price>$12.00</Price>
+			<Description>MITSHU 7 Pcs Non Stick Cookware Set with Glass Lids Aluminum Stainless Steel Base.</Description>
+	</product>		
+	
+
+	
+	<product id = "P13">	
+			<category>Stationaries</category>
+			<Item>Books</Item>
+			<Brand>Promate</Brand>
+			<Price>$2.00</Price>
+			<Description>ProMate CR Book Square Ruled 160Pgs.</Description>
+	</product>
+	
+	
+	<product id = "P14">
+			<category>Stationaries</category>
+			<Item>Plates</Item>
+			<Brand>Royale Foam</Brand>
+			<Price>$20.00</Price>
+			<Description>Dinning plate.</Description>
+	</product>
+
+	
+	<product id = "P15">	
+			<category>Stationaries</category>
+			<Item>Pens</Item>
+			<Brand>Atlas</Brand>
+			<Price>$1.00</Price>
+			<Description>Atlas Cool Pen - [ 10 PCS ].</Description>
+	</product>
+
+	
+	<product id = "P16">	
+			<category>Stationaries</category>
+			<Item>Cases</Item>
+			<Brand>LumiParty</Brand>
+			<Price>$2.00</Price>
+			<Description>LumiParty 3-Layer Pencil Case Big Capacity Waterproof Zipper Pen Bag Pouch School Stationery Supply.</Description>
+	</product>		
+	
+
+
+</Products>

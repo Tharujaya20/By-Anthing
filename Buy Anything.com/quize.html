@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quize</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: linear-gradient(115deg, rgba(101, 151, 209, 0.8), rgba(202, 102, 211, 0.5)), url(quizbg.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        
+        .img {
+            width: 5.5rem;
+            height: 5.2rem;
+            border-radius: 50%;
+        }
+        
+        .img {
+            position: fixed;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            background-color: #F5FEFF;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px;
+        }
+        
+        .logo span {
+            background-color: #404969;
+            color: #F5FEFF;
+            padding: 0 10px;
+        }
+        
+        .container {
+            width: 400px;
+            margin: 0 auto;
+            margin-top: 90px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        
+        p {
+            color: aquamarine;
+        }
+        
+        span {
+            color: brown;
+        }
+        
+        .answerBank li {
+            text-align: left;
+            margin-bottom: 0.2rem;
+            font-size: larger;
+        }
+        
+        .answers {
+            margin-top: 1rem;
+        }
+        
+        .button1 {
+            position: relative;
+            background-color: crimson;
+            border: none;
+            font-size: 28px;
+            color: #FFFFFF;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .button1:after {
+            content: "";
+            background: crimson;
+            display: block;
+            position: absolute;
+            padding-top: 300%;
+            padding-left: 350%;
+            margin-left: -20px!important;
+            margin-top: -120%;
+            opacity: 0;
+            transition: all 0.8s
+        }
+        
+        .button1:active:after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s
+        }
+    </style>
+
+</head>
+
+<body>
+    <img src="logo.jpeg" alt="img" id="img" class="img">
+
+
+    <div class="logo">
+        <span>Buy</span>Anything.com
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h1>Quiz Result</h1>
+            <p>Total Marks:10 </p>
+
+            <div>
+                Marks Scored:<span id="result"></span>
+            </div>
+        </div>
+        <div id="answerBank">
+            <h2>Answers :</h2>
+            <ol type="1" id="answers">
+
+            </ol>
+            <button type="button" id="score-btn" onclick="backToQuiz()">Back to Quiz</button>
+            <h4><a href="Buy Anything.com.html"><button class="button1">Login Buy Anything.com</button></a>
+            </h4>
+        </div>
+    </div>
+    <script>
+        var score = 0;
+        if (prompt("Google is one of most popular? 1/portal 2/browser 3/Serch engine ") == "3") {
+            score = score + 2;
+
+        }
+        if (prompt("Web page are preparied using their language as? 1/html 2/ftp 3/http") == "1") {
+            score = score + 2;
+
+        }
+        if (prompt("E-Commerce stands for? 1/Electrical Commerce 2/Electronic Commerce 3/Entertainment Commerce ") == "2") {
+            score = score + 2;
+
+        }
+        if (prompt("All electronically mediated information exchanges are known as? 1/ E-Business 2/E-Commerce 3/Digital Business") == "2") {
+            score = score + 2;
+        }
+        if (prompt("Is NOT an example of E-Commerce Platform? 1/DMart 2/Amazon 3/ Reliance ") == "3") {
+            score = score + 2;
+
+        }
+        document.getElementById('result').innerHTML = "calculating.... ";
+
+        function showAwnswer() {
+            if (score == 10) {
+                alert("You are top 1! $GOALD MEDEL$ ");
+                document.getElementById('result').innerHTML = score;
+
+            }
+            if (score == 8) {
+                alert("You are top 2! $SILVER MEDELS$ ");
+                document.getElementById('result').innerHTML = score;
+
+            }
+
+            if (score == 6) {
+                alert("You are top 3! $BRONZE MEDEL$");
+                document.getElementById('result').innerHTML = score;
+
+            }
+
+            if (score < 2) {
+                alert("Not Qualified! ");
+                document.getElementById('result').innerHTML = score;
+
+            }
+        }
+        setTimeout(showAwnswer, 2000);
+
+        //Back to Quiz button event
+        function backToQuiz() {
+            location.reload();
+        }
+    </script>
+
+</body>
+<footer>
+    <div class="editorsPg">
+        <p><strong>Who made this page?</strong>Click on "Editors Page".</p>
+        <p style="font-size:20px;"><a href="Editor page.html" style="color:red;">Editors Page</a></p>
+    </div>
+
+</footer>
+
+</html>

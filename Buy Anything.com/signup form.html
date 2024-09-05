@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <script>
+        function validateForm() {
+            var fn = document.forms["regform"]["First Name"].value;
+            var ln = document.forms["regform"]["Last Name"].value;
+            var gn = document.forms["regform"]["Gender"].value;
+            var userage = document.forms["regform"]["userAge"].value;
+            var mail = document.forms["regform"]["Email address"].value;
+            var occu = document.forms["regform"]["Occupation"].value;
+            var pref = document.forms["regform"]["Your preferences "].value;
+
+            if (fn == null || fn == "") {
+                alert("First name must be filled");
+                return false;
+            } else if (ln == null || ln == "") {
+                alert("Last name must be filled");
+                return false;
+            } else if (gn == null || gn == "") {
+                alert("Gender must be chosen");
+                return false;
+            } else if (userage == null || userage == "") {
+                alert("Age must be filled");
+                return false;
+            } else if (mail == null || mail == "") {
+                alert("Email address must be filled");
+                return false;
+            } else if (occu == null || occu == "") {
+                alert("Occupation must be filled");
+                return false;
+            } else if (pref == null || pref == "") {
+                alert("Your preferance must be filled");
+                return false;
+            }
+        }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signup form.css">
+
+
+    <!-- Navigation -->
+    <header>
+        <br>
+        <div class="div-nav" id="divNav">
+            <nav>
+                <div class="wrapper">
+                    <!-- Logo -->
+                    <div class="logo"><span>buy</span>Anything.com</div>
+                    <!-- Menu Show & Close Radios -->
+                    <input type="radio" name="slide" id="show-mbtn">
+                    <input type="radio" name="slide" id="close-mbtn">
+                    <!-- Sub Menu Items Show & Hide Checkboxes -->
+                    <input type="checkbox" name="service" id="service">
+                    <input type="checkbox" name="categories" id="categories">
+                    <!-- Menu Items -->
+                    <ul class="nav-links">
+                        <li><a href="Home.html">Home</a></li>
+                        <li><a href="au.html">About</a></li>
+                        <li><a href="gallerypg.html">Gallery</a></li>
+                        <li><a href="#"><label for="categories">Categories</label></a>
+                            <!-- Mega Menu -->
+                            <div class="mega-box">
+                                <div class="content">
+                                    <div class="row">
+                                        <img src="logopic1.jpeg" alt="logo image">
+                                    </div>
+                                    <div class="row">
+                                        <header>Clothes</header>
+                                        <ul class="mega-links">
+                                            <li><a href="shirt.html">Shirts</a></li>
+                                            <li><a href="#">Denims</a></li>
+                                            <li><a href="#">Frocks</a></li>
+                                            <li><a href="#">Blouses</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="row">
+                                        <header>Shoes</header>
+                                        <ul class="mega-links">
+                                            <li><a href="shoe.html">Casual</a></li>
+                                            <li><a href="#">Sports</a></li>
+                                            <li><a href="#">Office</a></li>
+                                            <li><a href="#">Dancing</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="row">
+                                        <header>Porcelain</header>
+                                        <ul class="mega-links">
+                                            <li><a href="mugs.html">Mugs</a></li>
+                                            <li><a href="#">Watches</a></li>
+                                            <li><a href="#">plates</a></li>
+                                            <li><a href="#">Pots</a></li>
+                                            <li><a href="#">curry dishes</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="row">
+                                        <header>Stationaries</header>
+                                        <ul class="mega-links">
+                                            <li><a href="books.html">Books</a></li>
+                                            <li><a href="#">Corporate Stationary</a></li>
+                                            <li><a href="#">Pens</a></li>
+                                            <li><a href="#">Cases</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="row">
+                                        <header>Food</header>
+                                        <ul class="mega-links">
+                                            <li><a href="Vegetables.html">Vegetables</a></li>
+                                            <li><a href="#">Fruits</a></li>
+                                            <li><a href="#">Snacks</a></li>
+                                            <li><a href="#">Grains</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="listingPg.html"> Listing Page</a></li>
+                    </ul>
+                    <!-- Menu Show & Close Buttons -->
+                    <label for="show-mbtn" class="sbtn mbtn"><i class="fas fa-bars"></i></label>
+                    <label for="close-mbtn" class="cbtn mbtn"><i class="fas fa-times"></i></label>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+</head>
+
+
+<body>
+    <div id="signup-box">
+
+        <h2 id="Signup-form">Sign up form</h2>
+
+        <div id="form">
+            <form name="regform" method="post" onsubmit="validateForm()">
+                <h2>Your Details:</h2>
+                <br>
+
+                <label for="fname">First Name :</label>
+                <input type="text" id="fname" placeholder="Enter your First name">
+                <br>
+
+                <label for="lname">Last Name :</label>
+                <input type="text" id="lname" placeholder="Enter your last name">
+                <br>
+
+                <label for="userAge">Age :</label>
+                <input type="text" id="userAge" placeholder="Enter your Age">
+                <br>
+
+                <label for="useremail">Email address : </label>
+                <input type="text" id="useremail" placeholder="Enter your email">
+                <br>
+
+                <label for="Occupation">Occupation :</label>
+                <input type="text" id="Occupation" placeholder="Enter your occupation">
+                <br>
+
+                <p>Gender:</p>
+
+                <select id="gender" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                    
+                <br>	
+                
+                
+                <textarea id="comments" name="comments "rows="5" cols="30" maxlength="300" placeholder="Any Comments"> </textarea>
+                <br>
+                <br>
+            
+                <select id="Your preferences" name="Your preferences">
+                    <option value="clothes">Clothes</option>
+                    <option value="shoes">shoes</option>
+                    <option value="Porcilane">porcilane</option>
+                    <option value="stationary">stationary</option>
+                    <option value="food">food</option>
+                    
+                </select>
+                <br>
+
+                <div id="hhh">
+
+                    <br>
+                    <button type="submit" id="submit">Sign up</button>
+                    <br>
+                    <button type="reset" id="reset">Reset</button>
+
+                </div>
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

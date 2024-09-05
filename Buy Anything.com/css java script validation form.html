@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: #485563;
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .container1 {
+            background-color: snow;
+            border-radius: 5px;
+            box-shadow: 0 2px 5pxb black;
+            overflow: hidden;
+            width: 400px;
+            max-width: 100%;
+        }
+        
+        .img {
+            width: 5.5rem;
+            height: 5.2rem;
+            border-radius: 50%;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            background-color: #F5FEFF;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px;
+        }
+        
+        .logo span {
+            background-color: #404969;
+            color: #F5FEFF;
+            padding: 0 10px;
+        }
+        
+        .header {
+            border-bottom: 1px solid black;
+            background-color: #f0f8ff05;
+            padding: 20px 40px;
+        }
+        
+        .header h2 {
+            margin: 0;
+        }
+        
+        .form {
+            padding: 30px 40px;
+        }
+        
+        .form-control {
+            margin-bottom: 10px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+        
+        .asterisk_input::before {
+            content: " *";
+            color: #e32;
+            position: relative;
+            margin: 0px 0px 0px -20px;
+            font-size: xx-large;
+            padding: 0 5px 0 0;
+        }
+        
+        .form-control label {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        
+        .form-control input {
+            border: 2px solid #f0f8ff05;
+            border-radius: 4px;
+            display: block;
+            font-family: inherit;
+            font-size: 14px;
+            padding: 10px;
+            width: 100%;
+        }
+        
+        .form-control input:focus {
+            outline: 0;
+            border-color: #777;
+        }
+        
+        .form-control.success input {
+            border-color: #2ecc71;
+        }
+        
+        .form-control.error input {
+            border-color: #e74c3c;
+        }
+        
+        .form-control i {
+            visibility: hidden;
+            position: absolute;
+            top: 100px;
+            right: 100px;
+        }
+        
+        .form-control.success i.fa-check-circle {
+            color: #2ecc71;
+            visibility: visible;
+        }
+        
+        .form-control.error i.fa-exclamation-circle {
+            color: #e74c3c;
+            visibility: visible;
+        }
+        
+        .form-control small {
+            color: #e74c3c;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            visibility: hidden;
+        }
+        
+        .form-control.error small {
+            visibility: visible;
+            size: 0vmax;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            font-size: 16px;
+            resize: none;
+        }
+        
+        .form button {
+            background-color: #f0f8ff05;
+            border: 2px solid #f0f8ff05;
+            border-radius: 4px;
+            color: black;
+            font-family: inherit;
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        #myProgress {
+            width: 100%;
+            background-color: #ddd;
+        }
+        
+        #myBar {
+            width: 10%;
+            background-color: #060f0c;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+        
+        .container .post {
+            display: none;
+        }
+        
+        .container .text {
+            font-size: 25px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .container .edit {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .container .edit:hover {
+            text-decoration: underline;
+        }
+        
+        .container .star-widget input {
+            display: none;
+        }
+        
+        .star-widget label {
+            font-size: 20px;
+            color: black;
+            padding: 10px;
+            float: right;
+            transition: all 0.2s ease;
+        }
+        
+        input:not(:checked)~label:hover,
+        input:not(:checked)~label:hover~label {
+            color: #fd4;
+        }
+        
+        input:checked~label {
+            color: #fd4;
+        }
+        
+        input#rate-5:checked~label {
+            color: #fe7;
+            text-shadow: 0 0 20px #952;
+        }
+        
+        #rate-1:checked~form header:before {
+            content: "I just hate it ";
+        }
+        
+        #rate-2:checked~form header:before {
+            content: "I don't like it ";
+        }
+        
+        #rate-3:checked~form header:before {
+            content: "It is awesome ";
+        }
+        
+        #rate-4:checked~form header:before {
+            content: "I just like it ";
+        }
+        
+        #rate-5:checked~form header:before {
+            content: "I just love it ";
+        }
+        
+        .container form {
+            display: none;
+        }
+        
+        input:checked~form {
+            display: block;
+        }
+        
+        form header {
+            width: 100%;
+            font-size: 25px;
+            color: #fe7;
+            font-weight: 500;
+            margin: 5px 0 20px 0;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        
+        form .textarea {
+            height: 100px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        form .textarea textarea {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            color: #eee;
+            border: 1px solid #333;
+            background: #222;
+            padding: 10px;
+            font-size: 17px;
+            resize: none;
+        }
+        
+        .textarea textarea:focus {
+            border-color: #444;
+        }
+        
+        form .btn {
+            height: 45px;
+            width: 100%;
+            margin: 15px 0;
+        }
+        
+        form .btn button {
+            height: 100%;
+            width: 100%;
+            border: 1px solid #444;
+            outline: none;
+            background: #222;
+            color: #999;
+            font-size: 17px;
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        form .btn button:hover {
+            background: #1b1b1b;
+        }
+        
+        .btn1 {
+            height: 45px;
+            width: 100%;
+            margin: 15px 0;
+        }
+        
+        .btn1 button {
+            height: 100%;
+            width: 100%;
+            border: 1px solid #444;
+            outline: none;
+            background: #222;
+            color: #999;
+            font-size: 17px;
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container1">
+        <section>
+            <img src="logo.jpeg" alt="img" id="img" class="img">
+            <div class="logo">
+                <span>Buy</span>Anything.com
+            </div>
+        </section>
+        <div class="header">
+            <h2> Enter The Page Create Account</h2>
+        </div>
+        <div>
+            <h1>complete</h1>
+        </div>
+
+        <div id="myProgress">
+            <div id="myBar">10%</div>
+        </div>
+
+
+        <form id="form" class="form">
+            <div class="form-control ">
+                <label for="name ">Name</label>
+                <span class="asterisk_input">  </span>
+                <input type="text " placeholder="Full Name " id="name " />
+                <i class="fas fa-check-circle "></i>
+                <i class="fas fa-exclamation-circle "></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="form-control ">
+                <label for="Email ">Email</label>
+                <span class="asterisk_input">  </span>
+                <input type="email " placeholder="abc@gmail.com " id="email " />
+                <i class="fas fa-check-circle "></i>
+                <i class="fas fa-exclamation-circle "></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="form-control ">
+                <label for="Comment ">Enter a Comment</label>
+                <span class="asterisk_input">  </span>
+                <textarea class="textfiled " placeholder="Your Comment " id="text area "></textarea>
+            </div>
+
+            <div class="container">
+                <div class="post">
+                    <div class="text">Thanks for rating us!</div>
+                    <div class="edit">EDIT</div>
+                </div>
+
+                <div class="star-widget">
+                    <input type="radio" name="rate" id="rate-5">
+                    <label for="rate-5" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-4">
+                    <label for="rate-4" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-3">
+                    <label for="rate-3" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-2">
+                    <label for="rate-2" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-1">
+                    <label for="rate-1" class="fas fa-star"></label>
+
+
+                    <div class="textarea">
+                        <textarea cols="30" placeholder="Describe your experience.."></textarea>
+                    </div>
+                    <div class="btn">
+                        <button type="submit" value="submit">Reset</button>
+                    </div>
+
+                </div>
+
+                <div class="btn 1">
+                    <button type="submit " value="submit " onclick="foe() ">Submit</button>
+
+                </div>
+
+            </div>
+        </form>
+
+
+
+        <script>
+            function form_validation() {
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+
+
+                if (name == null || name.length < 1) {
+                    error.classList.add("danger");
+                    error.innerHTML = "Please Enter Valid Name";
+                } else if (email == null || email.length < 1) {
+                    error.classList.add("danger");
+                    error.innerHTML = "Please Enter Valid Email";
+
+                } else {
+                    error.classList.remove("danger");
+                    error.classList.add("success");
+                    error.innerHTML = "Thankyou For Submitted Your Query!";
+                }
+            }
+
+
+            var i = 0;
+
+            function move() {
+                if (i == 0) {
+                    i = 1;
+                    var elem = document.getElementById("myBar ");
+                    var width = 10;
+                    var id = setInterval(frame, 10);
+
+                    function frame() {
+                        if (width >= 100) {
+                            clearInterval(id);
+                            i = 0;
+                        } else {
+                            width++;
+                            elem.style.width = width + "% ";
+                            elem.innerHTML = width + "% ";
+                        }
+                    }
+                }
+            }
+
+
+
+
+            function checkInputs() {
+                const nameValue = name.value.trim();
+                const emailValue = email.value.trim();
+                if (nameValue === '') {
+                    setErrorFor(username, 'name  be blank');
+                } else {
+                    setSuccessFor(username);
+                }
+                if (emailValue === '') {
+                    setErrorFor(email, 'Emailcannot be blank ');
+                } else if (!isEmail(emailValue)) {
+                    setErrorFor(email, 'Not a valid email');
+                } else {
+                    setSuccessFor(email);
+                }
+            }
+
+            function setErrorFor(input, message) {
+                const formControl = input.parentElement;
+                const small = formControl.querySelector('small ');
+                formControl.className = 'form-control error';
+                small.innerText = message;
+            }
+
+            function setSuccessFor(input) {
+                const formControl = input.parentElement;
+                formControl.className = 'form-control success';
+            }
+
+            function isEmail(email) {
+                return /^(([^ < >()\[\]\\., ;: \s @ " ]+(\.[^ <>()\[\]\\., ;: \s @ "]+)*)|(". + "))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+            }
+            const btn = document.querySelector("button");
+            const post = document.querySelector(".post");
+            const widget = document.querySelector(".star-widget");
+            const editBtn = document.querySelector(".edit");
+            btn.onclick = () => {
+                widget.style.display = "none";
+                post.style.display = "block";
+                editBtn.onclick = () => {
+                    widget.style.display = "block";
+                    post.style.display = "none";
+                }
+                return false;
+            }
+
+            function foe() {
+                alert("Dear Tharusha! Thank you very muchfor your feedback.you have rated our site and your comment was veryinformativ website ");
+                alert("Tharusha!thank you very much our page login ");
+            }
+        </script>
+
+</body>
+<footer>
+    <div class="editorsPg">
+        <p><strong>Who made this page?</strong>Click on "Editors Page".</p>
+        <p style="font-size:20px;"><a href="Editor page.html" style="color:red;">Editors Page</a></p>
+    </div>
+
+</footer>
+
+</html>
